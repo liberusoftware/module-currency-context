@@ -5,10 +5,10 @@ namespace Liberu\Foundation\Currency\Services;
 use Closure;
 use Liberu\Foundation\Currency\ValueObjects\Money;
 
-final readonly class MoneyFormatter
+final class MoneyFormatter
 {
     /** @param null|Closure(string): object $formatterFactory */
-    public function __construct(private ?Closure $formatterFactory = null) {}
+    public function __construct(private readonly ?Closure $formatterFactory = null) {}
 
     public function format(Money $money, string $locale): string
     {
