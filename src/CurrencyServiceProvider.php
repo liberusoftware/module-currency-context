@@ -12,8 +12,8 @@ final class CurrencyServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/currency.php', 'currency');
-        $this->app->singleton(CurrencyRegistry::class, fn () => new CurrencyRegistry(config('currency.currencies', [])));
-        $this->app->scoped(CurrencyContext::class, function ($app) {
+        $this->app->singleton(CurrencyRegistry::class, fn (): CurrencyRegistry => new CurrencyRegistry(config('currency.currencies', [])));
+        $this->app->scoped(CurrencyContext::class, function ($app): CurrencyContext {
             $registry = $app->make(CurrencyRegistry::class);
             $base = $registry->get(config('currency.base'));
             $display = config('currency.display');
