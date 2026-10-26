@@ -6,6 +6,7 @@
   "require": {
     "php": "^8.5",
     "illuminate/contracts": "^13.38.0",
+    "illuminate/http": "^13.38.0",
     "illuminate/support": "^13.38.0",
     "liberusoftware/module-manager": "^1.0"
   },
@@ -19,7 +20,7 @@
       "name": "currency-context"
     }
   },
-  "version": "1.5.0",
+  "version": "1.5.1",
   "autoload-dev": {
     "psr-4": {
       "Liberu\\Foundation\\Currency\\Tests\\": "tests/"
